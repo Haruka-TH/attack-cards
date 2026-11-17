@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATT&amp;CK 卡牌知識庫</title>
+  <meta name="description" content="以 MITRE ATT&CK 為架構的個人資安知識庫：紅色攻擊卡、藍色防禦卡，一張一張收集資安手法。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🃏</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="term-window">
+        <div class="term-window__bar">
+          <span class="term-window__dots"><span></span><span></span><span></span></span>
+          <span>guest@attack-cards: ~</span>
+        </div>
+        <div class="term-window__body">
+          <div class="prompt">
+            <span class="prompt__user">guest@attack-cards</span><span class="prompt__sym">:~$</span>./start --deck=enterprise
+          </div>
+          <h1 class="site-title">ATT&amp;CK 卡牌知識庫<span class="cursor" aria-hidden="true">▌</span></h1>
+          <p class="site-subtitle">以 MITRE ATT&amp;CK 為地圖，把每個攻擊手法收成一張 <span style="color:var(--attack)">紅卡</span>，每個防禦措施收成一張 <span style="color:var(--defense)">藍卡</span>。</p>
+          <nav class="site-header__nav" aria-label="主要導覽">
+            <a href="#progress">progress</a>
+            <a href="#matrix">matrix</a>
+            <a href="#deck">deck</a>
+            <a href="https://attack.mitre.org/" target="_blank" rel="noopener">mitre-attack ↗</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="progress">
+        <h2 class="cmd">./progress --summary</h2>
+        <div class="stats-row" id="stats">
+          <div class="stat-box"><div class="stat-box__label">loading…</div></div>
+        </div>
+      </section>
+
+      <section class="section" id="matrix">
+        <h2 class="cmd">cat matrix.txt</h2>
+        <p class="section__hint">ATT&amp;CK Enterprise 15 個戰術，由左到右大致是一次攻擊的順序。亮起的是已收錄的攻擊卡，橫向捲動看全部。</p>
+        <div class="matrix-scroll">
+          <div class="matrix" id="matrix-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="deck">
+        <h2 class="cmd" id="deck-cmd">ls ./deck/attack</h2>
+        <div class="toolbar" role="toolbar" aria-label="牌庫篩選">
+          <button class="btn btn--attack" data-type="attack" aria-pressed="true">🟥 攻擊卡</button>
+          <button class="btn btn--defense" data-type="defense" aria-pressed="false">🟦 防禦卡</button>
+          <span class="toolbar__sep"></span>
+          <div class="toolbar" id="filters" style="margin:0"></div>
+        </div>
+        <div class="deck" id="deck-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>MITRE ATT&amp;CK® 為 The MITRE Corporation 的註冊商標。本站內容為個人學習整理，以自己的話重新講解，詳細資料請以 <a href="https://attack.mitre.org/" target="_blank" rel="noopener">ATT&amp;CK 官網</a>為準。</p>
+      <p>本站只做「認識與防禦」的教育內容，不提供任何可直接執行的攻擊指令或程式碼。</p>
+    </footer>
+  </div>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+</html>

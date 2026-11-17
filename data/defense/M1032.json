@@ -1,0 +1,37 @@
+{
+  "id": "M1032",
+  "type": "defense",
+  "name_en": "Multi-factor Authentication",
+  "name_zh": "多因素驗證",
+  "icon": "🔐",
+  "category": "技術",
+  "stats": { "effectiveness": 5, "cost": 2, "difficulty": 2 },
+  "flavor": "「密碼被偷了？沒關係，你還差我手上的這支手機。」",
+  "summary": "登入時除了密碼，還要第二種證明，密碼外洩也不會直接失守。",
+  "analogy": "就像銀行保險箱需要「鑰匙＋本人簽名」兩樣東西才能打開。小偷就算複製了鑰匙，沒有你的簽名也打不開。",
+  "how_it_works": [
+    "驗證身分有三類證據：你知道的（密碼、PIN）、你擁有的（手機、實體金鑰）、你本身的（指紋、臉部）。",
+    "多因素驗證要求至少兩類不同的證據，單靠一組密碼無法登入。",
+    "因此就算密碼被猜中、被釣走或在外洩資料中出現，攻擊者還是過不了第二關。",
+    "實體安全金鑰或 FIDO2／通行金鑰（Passkey）可以進一步抵抗假登入頁的釣魚攻擊。"
+  ],
+  "practices": [
+    "優先替對外服務啟用：VPN、雲端信箱、遠端桌面、管理後台。",
+    "管理員與高權限帳號一律強制使用多因素驗證，最好使用實體金鑰。",
+    "盤點並停用沒有在用的舊帳號、測試帳號，避免出現「唯一沒開 MFA 的那個帳號」。",
+    "推播驗證開啟「數字配對」功能，降低使用者被疲勞轟炸而誤按同意的風險。"
+  ],
+  "limitations": [
+    "簡訊驗證碼可能被 SIM 卡挾持或即時轉發的假網站攔截，強度較弱。",
+    "攻擊者可能連續發送推播騷擾使用者，直到對方誤按同意（MFA 疲勞攻擊）。",
+    "若攻擊者偷到的是登入後的工作階段權杖（Session Token），可以繞過登入步驟。"
+  ],
+  "counters": [
+    { "id": "T1110", "name_en": "Brute Force" },
+    { "id": "T1078", "name_en": "Valid Accounts" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - M1032 Multi-factor Authentication", "url": "https://attack.mitre.org/mitigations/M1032/" }
+  ],
+  "updated": "2026-11-17"
+}

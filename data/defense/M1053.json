@@ -1,0 +1,40 @@
+{
+  "id": "M1053",
+  "type": "defense",
+  "name_en": "Data Backup",
+  "name_zh": "資料備份",
+  "icon": "💾",
+  "category": "流程",
+  "stats": { "effectiveness": 4, "cost": 3, "difficulty": 3 },
+  "flavor": "「你可以鎖住我的檔案，但鎖不住昨天的我。」",
+  "summary": "定期把重要資料複製到安全、隔離的地方，出事時能自己復原。",
+  "analogy": "就像把重要文件影印一份放在另一個城市的保險箱。家裡就算失火或被鎖，你還是拿得回來。",
+  "how_it_works": [
+    "依照排程把端點與重要伺服器的資料複製到另一個儲存位置。",
+    "備份必須與正式網路隔離，否則攻擊者入侵後會連備份一起加密或刪除。",
+    "「不可變備份」在保存期間內無法被修改或刪除，即使管理員帳號失守也一樣。",
+    "定期演練還原，確認備份真的能用、知道要花多久才能恢復營運。"
+  ],
+  "practices": [
+    "遵循 3-2-1 原則：至少 3 份資料、存在 2 種媒介、其中 1 份放在異地或離線。",
+    "備份系統使用獨立帳號與多因素驗證，不與一般網域帳號共用。",
+    "雲端儲存開啟版本控制，並把備份複製到不同帳號或區域。",
+    "每季至少挑選一個系統實際演練完整還原，並記錄所需時間。"
+  ],
+  "limitations": [
+    "備份只能幫你「復原」，無法阻止資料在加密前就被偷走（雙重勒索）。",
+    "備份頻率決定會損失多少資料；一天一次備份，最壞可能失去一天的資料。",
+    "大型環境完整還原可能要好幾天，期間業務仍會中斷。"
+  ],
+  "counters": [
+    { "id": "T1486", "name_en": "Data Encrypted for Impact" },
+    { "id": "T1485", "name_en": "Data Destruction" },
+    { "id": "T1490", "name_en": "Inhibit System Recovery" },
+    { "id": "T1491", "name_en": "Defacement" },
+    { "id": "T1561", "name_en": "Disk Wipe" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - M1053 Data Backup", "url": "https://attack.mitre.org/mitigations/M1053/" }
+  ],
+  "updated": "2026-11-17"
+}

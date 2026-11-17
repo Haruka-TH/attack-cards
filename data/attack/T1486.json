@@ -1,0 +1,52 @@
+{
+  "id": "T1486",
+  "type": "attack",
+  "name_en": "Data Encrypted for Impact",
+  "name_zh": "勒索加密",
+  "icon": "🔒",
+  "tactics": ["TA0040"],
+  "parent": null,
+  "stats": { "danger": 5, "stealth": 1, "prevalence": 4 },
+  "flavor": "「你的檔案都還在，只是鑰匙在我這裡。」",
+  "summary": "把受害者的檔案加密鎖住，讓系統無法運作，藉此勒索贖金。",
+  "analogy": "就像有人把你家所有抽屜都換上新鎖，只留一張紙條：「付錢就給你鑰匙」。東西沒被搬走，但你一樣都拿不到。",
+  "how_it_works": [
+    "攻擊者通常早已潛入一段時間，先摸清楚重要伺服器與備份放在哪裡。",
+    "在發動前，常會先停用或刪除備份與系統還原點，讓受害者無法自行復原。",
+    "接著同時在大量電腦上執行加密，把文件、資料庫、虛擬機磁碟變成無法開啟的檔案。",
+    "最後留下勒索訊息，要求以加密貨幣付款換取解密金鑰。",
+    "近年常見「雙重勒索」：加密前先偷走資料，不付錢就公開，讓有備份的受害者也受到威脅。"
+  ],
+  "examples": [
+    {
+      "title": "WannaCry（2017）",
+      "description": "具備蠕蟲能力的勒索軟體，利用 Windows 漏洞在網路內自動擴散，短時間內感染全球大量電腦，英國國民保健署（NHS）多家醫院因此受到影響。",
+      "url": "https://attack.mitre.org/software/S0366/"
+    },
+    {
+      "title": "NotPetya（2017）",
+      "description": "外表偽裝成勒索軟體，但實際上幾乎無法解密，更接近破壞型攻擊。它經由烏克蘭會計軟體的更新管道散播，再波及全球跨國企業。",
+      "url": "https://attack.mitre.org/software/S0368/"
+    },
+    {
+      "title": "Conti 勒索軟體",
+      "description": "以「勒索軟體即服務」模式營運的大型集團，曾攻擊醫療、政府等關鍵單位，並採用竊取資料加上加密的雙重勒索手法。",
+      "url": "https://attack.mitre.org/software/S0575/"
+    }
+  ],
+  "detection": [
+    "短時間內大量檔案被改寫，或副檔名被批次改成陌生名稱。",
+    "系統出現刪除備份、陰影複製或停用還原功能的操作。",
+    "許多資料夾同時出現相同檔名的勒索說明文字檔。",
+    "端點防護偵測到單一程式快速讀取並覆寫大量不同類型的檔案。"
+  ],
+  "mitigations": [
+    { "id": "M1040", "name_en": "Behavior Prevention on Endpoint" },
+    { "id": "M1053", "name_en": "Data Backup" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - T1486 Data Encrypted for Impact", "url": "https://attack.mitre.org/techniques/T1486/" },
+    { "title": "MITRE ATT&CK - S0366 WannaCry", "url": "https://attack.mitre.org/software/S0366/" }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,20 @@
+{
+  "source": "MITRE ATT&CK Enterprise Matrix (https://attack.mitre.org/), checked 2026-11-17",
+  "tactics": [
+    { "id": "TA0043", "order": 1,  "name_en": "Reconnaissance",       "name_zh": "偵察",     "total": 12 },
+    { "id": "TA0042", "order": 2,  "name_en": "Resource Development", "name_zh": "資源開發", "total": 9 },
+    { "id": "TA0001", "order": 3,  "name_en": "Initial Access",       "name_zh": "初始存取", "total": 11 },
+    { "id": "TA0002", "order": 4,  "name_en": "Execution",            "name_zh": "執行",     "total": 22 },
+    { "id": "TA0003", "order": 5,  "name_en": "Persistence",          "name_zh": "持續潛伏", "total": 22 },
+    { "id": "TA0004", "order": 6,  "name_en": "Privilege Escalation", "name_zh": "權限提升", "total": 13 },
+    { "id": "TA0005", "order": 7,  "name_en": "Stealth",              "name_zh": "隱匿",     "total": 31 },
+    { "id": "TA0112", "order": 8,  "name_en": "Defense Impairment",   "name_zh": "削弱防禦", "total": 18 },
+    { "id": "TA0006", "order": 9,  "name_en": "Credential Access",    "name_zh": "憑證存取", "total": 18 },
+    { "id": "TA0007", "order": 10, "name_en": "Discovery",            "name_zh": "環境探索", "total": 34 },
+    { "id": "TA0008", "order": 11, "name_en": "Lateral Movement",     "name_zh": "橫向移動", "total": 9 },
+    { "id": "TA0009", "order": 12, "name_en": "Collection",           "name_zh": "資料蒐集", "total": 17 },
+    { "id": "TA0011", "order": 13, "name_en": "Command and Control",  "name_zh": "命令與控制", "total": 18 },
+    { "id": "TA0010", "order": 14, "name_en": "Exfiltration",         "name_zh": "資料外洩", "total": 10 },
+    { "id": "TA0040", "order": 15, "name_en": "Impact",               "name_zh": "破壞衝擊", "total": 15 }
+  ]
+}

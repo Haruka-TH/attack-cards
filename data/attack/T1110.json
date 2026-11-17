@@ -1,0 +1,49 @@
+{
+  "id": "T1110",
+  "type": "attack",
+  "name_en": "Brute Force",
+  "name_zh": "暴力破解",
+  "icon": "🔨",
+  "tactics": ["TA0006"],
+  "parent": null,
+  "stats": { "danger": 3, "stealth": 2, "prevalence": 4 },
+  "flavor": "「password123 不行？那 Password123! 呢？」",
+  "summary": "不知道密碼就用大量嘗試去猜，直到矇對為止。",
+  "analogy": "就像拿著一大串鑰匙一把一把試門鎖。另一種玩法是拿同一把萬能鑰匙，去試整棟大樓每一戶的門，這就是「密碼噴灑」。",
+  "how_it_works": [
+    "攻擊者先取得可能的帳號清單，例如從公司官網推測出的員工信箱格式。",
+    "準備密碼清單：常見弱密碼、季節加年份這類規律組合，或其他網站外洩的帳密。",
+    "對登入入口反覆嘗試；為了避開帳號鎖定，可能放慢速度，或改成「少數密碼 × 大量帳號」的噴灑方式。",
+    "另一種變形是「撞庫」（Credential Stuffing）：直接拿別處外洩的帳密組合來試，專門利用重複使用密碼的人。",
+    "一旦猜中，攻擊者就能用合法身分登入，接著轉為「有效帳號濫用」。"
+  ],
+  "examples": [
+    {
+      "title": "Midnight Blizzard 入侵 Microsoft 測試帳號（2024）",
+      "description": "Microsoft 揭露，被歸屬為 APT29 的 Midnight Blizzard 以低頻率的密碼噴灑攻破一個沒有啟用多因素驗證的舊測試租用戶帳號，再藉此讀取部分高階主管的公司信箱。",
+      "url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/"
+    },
+    {
+      "title": "APT28 的大規模暴力破解行動",
+      "description": "被歸屬於俄羅斯軍事情報單位的 APT28，在 ATT&CK 中有多筆對政府與企業帳號進行暴力破解與密碼噴灑的紀錄。",
+      "url": "https://attack.mitre.org/groups/G0007/"
+    }
+  ],
+  "detection": [
+    "短時間內同一帳號出現大量登入失敗。",
+    "許多不同帳號各自失敗一兩次，但都來自相同或相近的來源，這是密碼噴灑的典型樣貌。",
+    "登入嘗試的時間間隔異常規律，看起來像程式自動執行。",
+    "一連串失敗之後緊接著一次成功登入，而且來源是陌生地區或住宅代理 IP。"
+  ],
+  "mitigations": [
+    { "id": "M1036", "name_en": "Account Use Policies" },
+    { "id": "M1032", "name_en": "Multi-factor Authentication" },
+    { "id": "M1027", "name_en": "Password Policies" },
+    { "id": "M1018", "name_en": "User Account Management" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - T1110 Brute Force", "url": "https://attack.mitre.org/techniques/T1110/" },
+    { "title": "Microsoft Security Blog - Midnight Blizzard: Guidance for responders on nation-state attack", "url": "https://www.microsoft.com/en-us/security/blog/2024/01/25/midnight-blizzard-guidance-for-responders-on-nation-state-attack/" }
+  ],
+  "updated": "2026-11-17"
+}

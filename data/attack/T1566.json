@@ -1,0 +1,51 @@
+{
+  "id": "T1566",
+  "type": "attack",
+  "name_en": "Phishing",
+  "name_zh": "網路釣魚",
+  "icon": "🎣",
+  "tactics": ["TA0001"],
+  "parent": null,
+  "stats": { "danger": 4, "stealth": 2, "prevalence": 5 },
+  "flavor": "「您的包裹地址有誤，請於 24 小時內點擊連結更新。」",
+  "summary": "假冒可信任的人或單位寄訊息，騙你點連結、開附件或交出帳密。",
+  "analogy": "就像有人穿上快遞制服按你家門鈴，你看到制服就開門了。攻擊者不用撬鎖，只要讓你相信他是「自己人」。",
+  "how_it_works": [
+    "攻擊者先蒐集目標資訊，例如公司名稱、主管姓名、常用的服務或廠商。",
+    "偽裝成銀行、物流、同事或主管，寄出看起來很真實的信件、簡訊或通訊軟體訊息。",
+    "訊息會製造緊急感或好奇心，例如「帳號即將停用」「這是你的薪資單」，促使收件人立刻行動。",
+    "收件人點擊連結後被導向假登入頁而交出帳密，或打開附件後讓惡意程式在電腦上執行。",
+    "攻擊者拿到第一個立足點後，再進一步竊取資料或往內部擴散。"
+  ],
+  "examples": [
+    {
+      "title": "Kimsuky 鎖定研究人員的魚叉式釣魚",
+      "description": "被認為與北韓有關的 Kimsuky 長期假冒記者、學者或研討會主辦單位，寄送客製化信件給智庫與政府相關人員，是 ATT&CK 中使用 T1566 的代表性組織之一。",
+      "url": "https://attack.mitre.org/groups/G0094/"
+    },
+    {
+      "title": "Royal 勒索軟體的回撥式釣魚",
+      "description": "Royal 勒索軟體的攻擊者會寄出假的訂閱扣款通知，誘使受害者主動打電話給「客服」，再一步步引導對方安裝遠端工具，最後部署勒索軟體。",
+      "url": "https://attack.mitre.org/software/S1073/"
+    }
+  ],
+  "detection": [
+    "郵件閘道發現寄件網域與顯示名稱不符，或 SPF／DKIM／DMARC 驗證失敗。",
+    "信件中的連結指向剛註冊不久、拼字近似正牌品牌的網域。",
+    "使用者點開附件後，Office 程式突然啟動命令列或連線到陌生網址。",
+    "同一封可疑信件在短時間內大量寄給組織內不同成員。"
+  ],
+  "mitigations": [
+    { "id": "M1049", "name_en": "Antivirus/Antimalware" },
+    { "id": "M1047", "name_en": "Audit" },
+    { "id": "M1031", "name_en": "Network Intrusion Prevention" },
+    { "id": "M1021", "name_en": "Restrict Web-Based Content" },
+    { "id": "M1054", "name_en": "Software Configuration" },
+    { "id": "M1017", "name_en": "User Training" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - T1566 Phishing", "url": "https://attack.mitre.org/techniques/T1566/" },
+    { "title": "MITRE ATT&CK - G0094 Kimsuky", "url": "https://attack.mitre.org/groups/G0094/" }
+  ],
+  "updated": "2026-11-17"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "M0000",
+  "type": "defense",
+  "name_en": "Official English Name",
+  "name_zh": "中文名稱",
+  "icon": "❓",
+  "category": "技術",
+  "stats": { "effectiveness": 3, "cost": 3, "difficulty": 3 },
+  "flavor": "「一句像遊戲卡牌下方的台詞。」",
+  "summary": "一句話白話解釋，40 字以內。",
+  "analogy": "生活化比喻，2～3 句。",
+  "how_it_works": [
+    "這項防禦怎麼運作 1",
+    "2",
+    "3"
+  ],
+  "practices": [
+    "具體可以怎麼做 1",
+    "2",
+    "3"
+  ],
+  "limitations": [
+    "這項防禦的限制或盲點 1"
+  ],
+  "counters": [
+    { "id": "T0000", "name_en": "Official Technique Name" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - M0000 Official English Name", "url": "https://attack.mitre.org/mitigations/M0000/" }
+  ],
+  "updated": "YYYY-MM-DD"
+}

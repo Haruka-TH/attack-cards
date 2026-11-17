@@ -1,0 +1,53 @@
+{
+  "id": "T1078",
+  "type": "attack",
+  "name_en": "Valid Accounts",
+  "name_zh": "有效帳號濫用",
+  "icon": "🪪",
+  "tactics": ["TA0001", "TA0003", "TA0004", "TA0005"],
+  "parent": null,
+  "stats": { "danger": 4, "stealth": 5, "prevalence": 5 },
+  "flavor": "「我沒有入侵，我是登入。」",
+  "summary": "用偷來或猜到的真實帳號登入系統，讓攻擊看起來像正常使用者的操作。",
+  "analogy": "就像小偷撿到員工的門禁卡，大搖大擺刷卡進公司。警衛看到的只是「一位員工進門了」，根本不會起疑。",
+  "how_it_works": [
+    "攻擊者透過釣魚、暴力破解、外洩資料庫或購買等方式取得一組真實帳密。",
+    "用這組帳號登入 VPN、雲端服務或內部系統，登入行為本身完全合法。",
+    "因為身分是真的，防毒與防火牆通常不會阻擋，攻擊者可以長時間潛伏。",
+    "如果偷到的是管理員或服務帳號，還能直接取得更高權限。",
+    "被遺忘的舊帳號、預設帳號和測試帳號特別危險，因為沒人在用，也就沒人發現異狀。"
+  ],
+  "examples": [
+    {
+      "title": "Colonial Pipeline 勒索事件（2021）",
+      "description": "美國最大燃油管線業者之一遭 DarkSide 勒索。執行長在參議院作證時表示，攻擊者是透過一個已不再使用、也沒有多因素驗證的舊 VPN 帳號進入公司網路。",
+      "url": "https://www.darkreading.com/attacks-breaches/colonial-pipeline-ceo-ransomware-attack-started-via-pilfered-legacy-vpn-account/d/d-id/1341237"
+    },
+    {
+      "title": "APT29 與 SolarWinds 入侵事件",
+      "description": "ATT&CK 將有效帳號濫用列為 SolarWinds 入侵事件的相關技術之一，攻擊者利用取得的雲端與網域帳號在受害環境中長期活動。",
+      "url": "https://attack.mitre.org/groups/G0016/"
+    }
+  ],
+  "detection": [
+    "帳號在不尋常的時間或地點登入，例如半夜從海外登入。",
+    "「不可能的移動」：同一帳號在短時間內從相距很遠的兩地登入。",
+    "長期沒有使用的帳號突然又開始活動。",
+    "一般使用者帳號開始存取它平常不會碰的系統或大量檔案。"
+  ],
+  "mitigations": [
+    { "id": "M1036", "name_en": "Account Use Policies" },
+    { "id": "M1015", "name_en": "Active Directory Configuration" },
+    { "id": "M1013", "name_en": "Application Developer Guidance" },
+    { "id": "M1032", "name_en": "Multi-factor Authentication" },
+    { "id": "M1027", "name_en": "Password Policies" },
+    { "id": "M1026", "name_en": "Privileged Account Management" },
+    { "id": "M1018", "name_en": "User Account Management" },
+    { "id": "M1017", "name_en": "User Training" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - T1078 Valid Accounts", "url": "https://attack.mitre.org/techniques/T1078/" },
+    { "title": "Dark Reading - Colonial Pipeline CEO: Ransomware Attack Started via Pilfered 'Legacy' VPN Account", "url": "https://www.darkreading.com/attacks-breaches/colonial-pipeline-ceo-ransomware-attack-started-via-pilfered-legacy-vpn-account/d/d-id/1341237" }
+  ],
+  "updated": "2026-11-17"
+}

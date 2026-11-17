@@ -1,0 +1,36 @@
+{
+  "id": "T0000",
+  "type": "attack",
+  "name_en": "Official English Name",
+  "name_zh": "中文名稱",
+  "icon": "❓",
+  "tactics": ["TA0000"],
+  "parent": null,
+  "stats": { "danger": 3, "stealth": 3, "prevalence": 3 },
+  "flavor": "「一句像遊戲卡牌下方的台詞。」",
+  "summary": "一句話白話解釋，40 字以內。",
+  "analogy": "生活化比喻，2～3 句。",
+  "how_it_works": [
+    "概念步驟 1（只寫概念，不寫指令或程式碼）",
+    "概念步驟 2",
+    "概念步驟 3"
+  ],
+  "examples": [
+    {
+      "title": "案例名稱",
+      "description": "發生了什麼、和本技術的關係，2～3 句。",
+      "url": "https://attack.mitre.org/..."
+    }
+  ],
+  "detection": [
+    "防守方可以觀察到的跡象 1",
+    "跡象 2"
+  ],
+  "mitigations": [
+    { "id": "M0000", "name_en": "Official Mitigation Name" }
+  ],
+  "references": [
+    { "title": "MITRE ATT&CK - T0000 Official English Name", "url": "https://attack.mitre.org/techniques/T0000/" }
+  ],
+  "updated": "YYYY-MM-DD"
+}
